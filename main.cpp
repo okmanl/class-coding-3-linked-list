@@ -47,8 +47,8 @@ void insertFront(struct Node **head, int n) {
 void display(struct Node *head) {
   //TODO
     if (head != NULL) {
-        cout << "%d" << head -> data << endl;
-        display (head);
+        cout <<  head -> data << endl;
+        display (head->next);
     }
     else return;
 

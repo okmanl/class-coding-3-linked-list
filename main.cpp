@@ -18,7 +18,7 @@ struct Node {
 void initNode(struct Node *head, int n) {
   //TODO: Initiliaze the node data to n and the next pointer to..?
     head -> data = n;
-    head -> next = nullptr;
+    head -> next = NULL;
 
 }
 
@@ -29,7 +29,6 @@ void initNode(struct Node *head, int n) {
  */
 void addNode(struct Node *head, int n) {
   //TODO - Implement this function.
-
 }
 
 /**
@@ -47,6 +46,12 @@ void insertFront(struct Node **head, int n) {
  */
 void display(struct Node *head) {
   //TODO
+    if (head != NULL) {
+        cout << "%d" << head -> data << endl;
+        display (head);
+    }
+    else return;
+
 }
 
 /**
@@ -134,10 +139,10 @@ int main() {
   struct Node *newHead;
   struct Node *head = new Node;
 
-  /*
+
   initNode(head,10);
   display(head);
-
+    /*
   addNode(head,20);
   display(head);
 

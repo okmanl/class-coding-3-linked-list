@@ -28,7 +28,20 @@ void initNode(struct Node *head, int n) {
  * @param n - data that the new node should hold
  */
 void addNode(struct Node *head, int n) {
-  //TODO - Implement this function.
+
+    Node *temp = new Node;
+    temp->data = n;
+    temp->next = NULL;
+
+    if(!head) { // empty list becomes the new node
+        head = temp;
+        return;
+    } else { // find last and link the new node
+        Node *last = head;
+        while(last->next) last=last->next;
+        last->next = temp;
+    }
+
 
 }
 
@@ -47,6 +60,14 @@ void insertFront(struct Node **head, int n) {
  */
 void display(struct Node *head) {
   //TODO
+    cout<<"\n\n\nDisplay Function\n";
+    Node *list=head;
+    while(list) {
+        cout << list->data;
+        list = list->next;
+    }
+    cout << endl;
+    cout << endl;
 }
 
 /**

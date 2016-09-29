@@ -50,6 +50,10 @@ void addNode(struct Node *head, int n) {
  */
 void insertFront(struct Node **head, int n) {
     //TODO
+    Node *tempNode=new Node;
+    tempNode->data=n;
+    tempNode->next=*head;
+    *head=tempNode;
 }
 
 /**
@@ -113,6 +117,7 @@ bool deleteNode(struct Node *head, Node *ptrDel) {
     }
     return false;
 }
+
 
 /* reverse the list */
 struct Node *reverse(struct Node **head) {

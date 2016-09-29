@@ -107,7 +107,7 @@ bool deleteNode(struct Node *head, Node *ptrDel) {
     nPrev = head;
     nDel = head -> next;
     while(nDel != NULL){
-        if(nDel -> data = val){
+        if(nDel -> data == val){
             nPrev -> next = nDel -> next;
             delete nDel;
             return true;

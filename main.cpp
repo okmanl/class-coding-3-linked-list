@@ -74,6 +74,13 @@ void display(struct Node *head) {
  */
 struct Node *searchNode(struct Node *head, int n) {
   //TODO
+    Node *someNode = head;
+    while (someNode) {
+        if (someNode -> data == n)
+            return someNode;
+            someNode = someNode -> next;
+    }
+    cout << "Error\n";
   return NULL;
 }
 
@@ -154,7 +161,7 @@ int main() {
 
   initNode(head,10);
   display(head);
-    /*
+
   addNode(head,20);
   display(head);
 
@@ -210,6 +217,6 @@ int main() {
   cout << "Deleting the copied list\n";
   deleteLinkedList(&newHead);
   display(newHead);
-   */
+
   return 0;
 }

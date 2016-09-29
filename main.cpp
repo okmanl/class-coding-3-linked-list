@@ -29,6 +29,18 @@ void initNode(struct Node *head, int n) {
  */
 void addNode(struct Node *head, int n) {
   //TODO - Implement this function.
+  Node *newNode = new Node;
+  newNode -> data = n;
+  newNode ->next = NULL;
+
+  Node *someNode = head;
+  while(someNode){
+    if(someNode -> next == NULL){
+      someNode -> next = newNode;
+      return;
+    }
+    someNode = someNode -> next;
+  }
 }
 
 /**

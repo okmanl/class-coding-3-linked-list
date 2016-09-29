@@ -50,6 +50,10 @@ void addNode(struct Node *head, int n) {
  */
 void insertFront(struct Node **head, int n) {
   //TODO
+    Node *tempNode=new Node;
+    tempNode->data=n;
+    tempNode->next=*head;
+    *head=tempNode;
 }
 
 /**

@@ -94,18 +94,18 @@ struct Node *searchNode(struct Node *head, int n) {
  * @param ptrDel - pointer to the node that is to be deleted
  * @return - boolean that indicates if the deletion was successful
  */
-bool deleteNode(struct Node *head, Node *ptrDel) {
+bool deleteNode(struct Node **head, Node *ptrDel) {
     //TODO
     int val = ptrDel -> data;
     Node* nPrev = NULL, *nDel = NULL;
-    if(head -> data == val){
-        nDel = head;
-        head = nDel -> next;
+    if(*head == ptrDel){
+        nDel = *head;
+        *head = nDel -> next;
         delete nDel;
         return true;
     }
-    nPrev = head;
-    nDel = head -> next;
+    nPrev = *head;
+    nDel = *head;
     while(nDel != NULL){
         if(nDel -> data == val){
             nPrev -> next = nDel -> next;
@@ -203,7 +203,7 @@ int main() {
 
     int numDel = 5;
     Node *ptrDelete = searchNode(head,numDel);
-    if(deleteNode(head,ptrDelete))
+    if(deleteNode(&head,ptrDelete))
         cout << "Node "<< numDel << " deleted!\n";
     display(head);
 
@@ -225,7 +225,7 @@ int main() {
 
     numDel = 35;
     ptrDelete = searchNode(newHead,numDel);
-    if(deleteNode(newHead,ptrDelete)) {
+    if(deleteNode(&newHead,ptrDelete)) {
         cout << "Node "<< numDel << " deleted!\n";
         cout << "The new list after the delete is\n";
         display(newHead);
